@@ -63,6 +63,7 @@ function legal(grid) {
 	for(var i = 0; i < 9; i++)
 		for(var j = 0; j < 9; j++) {
 			var num = grid[i][j];
+			if(num < 0 || num > 9) return false;
 			if(num != 0) {
 				grid[i][j] = 0;
 				if(!valid(grid, i, j, num))
