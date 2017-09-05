@@ -61,10 +61,15 @@ function fail() {
 
 function legal(grid) {
 	for(var i = 0; i < 9; i++)
-		for(var j = 0; j < 9; j++)
-			if(grid[i][j] != 0)
-				if(!valid(grid, i, j, grid[i][j]))
+		for(var j = 0; j < 9; j++) {
+			var num = grid[i][j];
+			if(num != 0) {
+				grid[i][j] = 0;
+				if(!valid(grid, i, j, num))
 					return false;
+				grid[i][j] = num;
+			}
+		}
 	return true;
 }
 
