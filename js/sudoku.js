@@ -13,15 +13,11 @@ function read() {
 	return input_grid;
 }
 
-function convert_and_disable(input_grid) {
+function convert(input_grid) {
 	var grid = new_grid();
-	for(var i = 0; i < 9; i++) {
-		for(var j = 0; j < 9; j++) {
+	for(var i = 0; i < 9; i++)
+		for(var j = 0; j < 9; j++)
 			grid[i][j] = Number(input_grid[i][j].value);
-			if(grid[i][j] != 0)
-				input_grid[i][j].disabled = true;
-		}
-	}
 	return grid;
 }
 
@@ -59,9 +55,22 @@ function show(grid, input_grid) {
 			input_grid[i][j].value = grid[i][j];
 }
 
+function fail() {
+	document.getElementById("error").classList.remove("is-hidden");
+}
+
+function legal(grid) {
+	for(var i = 0; i < 9; i++)
+		for(var j = 0; j < 9; j++)
+			if(grid[i][j] != 0)
+				if(!valid(grid, i, j, grid[i][j]))
+					return false;
+	return true;
+}
+
 function solve(input_grid) {
-	var grid = convert_and_disable(input_grid);
-	if(fill(grid, 0, 0))
+	var grid = convert(input_grid);
+	if(legal(grid) && fill(grid, 0, 0))
 		show(grid, input_grid);
 	else
 		fail();
@@ -73,6 +82,7 @@ function start() {
 }
 
 function clear() {
+	document.getElementById("error").classList.add("is-hidden");
 	for(var i = 0; i < 9; i++)
 		for(var j = 0; j < 9; j++)
 			document.getElementById("cell-" + String(9*i+j)).value = "";
