@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Sudoku solver</title>
+
+    <link rel="stylesheet" type="text/css" href="css/sudoku.css">
+    <link rel="stylesheet" type="text/css" href="css/bulma.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container has-text-centered">
+
+          <h1 class="title is-1">Sudoku solver</h1>
+          <h2 class="subtitle">Just fill the board and press solve!</h2>
+
+          <table id="grid">
+
+            <tr>
+              <td><input id="cell-0"  type="number"></td>
+              <td><input id="cell-1"  type="number"></td>
+              <td><input id="cell-2"  type="number"></td>
+
+              <td><input id="cell-3"  type="number"></td>
+              <td><input id="cell-4"  type="number"></td>
+              <td><input id="cell-5"  type="number"></td>
+
+              <td><input id="cell-6"  type="number"></td>
+              <td><input id="cell-7"  type="number"></td>
+              <td><input id="cell-8"  type="number"></td>
+          </tr>
+
+          <tr>
+              <td><input id="cell-9"  type="number"></td>
+              <td><input id="cell-10" type="number"></td>
+              <td><input id="cell-11" type="number"></td>
+
+              <td><input id="cell-12" type="number"></td>
+              <td><input id="cell-13" type="number"></td>
+              <td><input id="cell-14" type="number"></td>
+
+              <td><input id="cell-15" type="number"></td>
+              <td><input id="cell-16" type="number"></td>
+              <td><input id="cell-17" type="number"></td>
+          </tr>
+
+          <tr>          
+              <td><input id="cell-18" type="number"></td>
+              <td><input id="cell-19" type="number"></td>
+              <td><input id="cell-20" type="number"></td>
+
+              <td><input id="cell-21" type="number"></td>
+              <td><input id="cell-22" type="number"></td>
+              <td><input id="cell-23" type="number"></td>
+
+              <td><input id="cell-24" type="number"></td>
+              <td><input id="cell-25" type="number"></td>
+              <td><input id="cell-26" type="number"></td>
+          </tr>
+
+          <tr>          
+              <td><input id="cell-27" type="number"></td>
+              <td><input id="cell-28" type="number"></td>
+              <td><input id="cell-29" type="number"></td>
+
+              <td><input id="cell-30" type="number"></td>
+              <td><input id="cell-31" type="number"></td>
+              <td><input id="cell-32" type="number"></td>
+
+              <td><input id="cell-33" type="number"></td>
+              <td><input id="cell-34" type="number"></td>
+              <td><input id="cell-35" type="number"></td>
+          </tr>
+
+          <tr>          
+              <td><input id="cell-36" type="number"></td>
+              <td><input id="cell-37" type="number"></td>
+              <td><input id="cell-38" type="number"></td>
+
+              <td><input id="cell-39" type="number"></td>
+              <td><input id="cell-40" type="number"></td>
+              <td><input id="cell-41" type="number"></td>
+
+              <td><input id="cell-42" type="number"></td>
+              <td><input id="cell-43" type="number"></td>
+              <td><input id="cell-44" type="number"></td>
+          </tr>
+
+          <tr>          
+              <td><input id="cell-45" type="number"></td>
+              <td><input id="cell-46" type="number"></td>
+              <td><input id="cell-47" type="number"></td>
+
+              <td><input id="cell-48" type="number"></td>
+              <td><input id="cell-49" type="number"></td>
+              <td><input id="cell-50" type="number"></td>
+
+              <td><input id="cell-51" type="number"></td>
+              <td><input id="cell-52" type="number"></td>
+              <td><input id="cell-53" type="number"></td>
+          </tr>
+
+          <tr>          
+              <td><input id="cell-54" type="number"></td>
+              <td><input id="cell-55" type="number"></td>
+              <td><input id="cell-56" type="number"></td>
+
+              <td><input id="cell-57" type="number"></td>
+              <td><input id="cell-58" type="number"></td>
+              <td><input id="cell-59" type="number"></td>
+
+              <td><input id="cell-60" type="number"></td>
+              <td><input id="cell-61" type="number"></td>
+              <td><input id="cell-62" type="number"></td>
+          </tr>
+
+          <tr>          
+              <td><input id="cell-63" type="number"></td>
+              <td><input id="cell-64" type="number"></td>
+              <td><input id="cell-65" type="number"></td>
+
+              <td><input id="cell-66" type="number"></td>
+              <td><input id="cell-67" type="number"></td>
+              <td><input id="cell-68" type="number"></td>
+
+              <td><input id="cell-69" type="number"></td>
+              <td><input id="cell-70" type="number"></td>
+              <td><input id="cell-71" type="number"></td>
+          </tr>
+
+          <tr>          
+              <td><input id="cell-72" type="number"></td>
+              <td><input id="cell-73" type="number"></td>
+              <td><input id="cell-74" type="number"></td>
+
+              <td><input id="cell-75" type="number"></td>
+              <td><input id="cell-76" type="number"></td>
+              <td><input id="cell-77" type="number"></td>
+
+              <td><input id="cell-78" type="number"></td>
+              <td><input id="cell-79" type="number"></td>
+              <td><input id="cell-80" type="number"></td>
+          </tr>
+
+      </table>
+      <button class="button is-light" id="clear">Clear</button>
+      <button class="button is-success" id="solve">Solve</button>
+      
+
+  </div>
+</section>
+
+<script src="js/sudoku.js"></script>
+
+</body>
+</html>
